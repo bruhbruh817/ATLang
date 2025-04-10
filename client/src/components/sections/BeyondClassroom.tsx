@@ -14,14 +14,12 @@ export default function BeyondClassroom() {
       <div className="bg-muted/30 p-5 rounded-lg my-6">
         <h2 className="text-xl font-semibold mb-3">About This Section</h2>
         <p className="text-muted-foreground mb-3">
-          This section showcases writing I've done outside of formal class assignments. These pieces demonstrate 
-          how I've applied the skills developed in AP Language and Composition to other contexts, including college 
-          applications, creative writing, and personal projects.
+          
+
         </p>
         <p className="text-muted-foreground">
-          While these works weren't created for a grade, they represent important aspects of my identity as a writer 
-          and show how writing has become an essential tool for self-expression and communication in my life beyond 
-          academic requirements.
+         
+
         </p>
       </div>
       
@@ -33,22 +31,22 @@ export default function BeyondClassroom() {
           <li className="text-muted-foreground">
             <span className="font-medium text-foreground">School Newspaper Articles</span>
             <p className="mt-1">
-              As features editor for the Westlake Chronicle, I've written several articles exploring student life, 
-              including an in-depth piece on mental health resources that received regional recognition.
+              
+
             </p>
           </li>
           <li className="text-muted-foreground">
             <span className="font-medium text-foreground">Creative Writing Collection</span>
             <p className="mt-1">
-              A series of short stories exploring themes of identity and belonging, developed through the 
-              school's creative writing club.
+             
+
             </p>
           </li>
           <li className="text-muted-foreground">
             <span className="font-medium text-foreground">Community Blog</span>
             <p className="mt-1">
-              Regular contributions to a local environmental action group's blog, focusing on youth perspectives 
-              on sustainability and climate action.
+              
+              
             </p>
           </li>
         </ul>

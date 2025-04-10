@@ -32,20 +32,15 @@ export default function Inspirations() {
       <div className="bg-primary/5 border border-primary/20 p-6 rounded-lg mt-8">
         <h3 className="text-xl font-semibold mb-4">Reflection on Influences</h3>
         <p className="text-muted-foreground mb-3">
-          The diverse influences listed above have collectively shaped my approach to writing in several ways. From 
-          Joan Didion, I've learned the power of precision and emotional restraint. James Baldwin has taught me how 
-          to weave personal experience with social commentary. Tim O'Brien's work showed me how to blur the 
-          boundaries between memoir and fiction in service of emotional truth.
+          
         </p>
         <p className="text-muted-foreground mb-3">
-          My teachers have been equally influential. Ms. Rivera's focus on rigorous revision transformed my writing 
-          process, while Mr. Chen's emphasis on anticipating counterarguments has strengthened my persuasive writing. 
-          These mentors have given me specific techniques that I now apply consciously in my work.
+          
+
         </p>
         <p className="text-muted-foreground">
-          As I continue to develop as a writer, I expect this constellation of influences to grow and evolve, 
-          reflecting my changing interests and expanding reading. I look forward to discovering new writers and 
-          approaches that will further shape my voice.
+        
+        
         </p>
       </div>
       

@@ -13,35 +13,34 @@ export default function AboutMe() {
       <Card className="shadow-md overflow-hidden">
         <CardContent className="p-6 space-y-6">
           <div>
-            <h2 className="text-2xl font-semibold mb-3">Hello, I'm [Student Name]</h2>
+            <h2 className="text-2xl font-semibold mb-3">Hello, I'm Sadi Bulut</h2>
             <p className="text-muted-foreground mb-4">
-              I'm a senior at Westlake High School with a passion for writing that spans academic analysis, 
-              creative expression, and everything in between. This portfolio showcases selected pieces from my 
-              AP Language and Composition class, along with writing from beyond the classroom.
+              Hello!, I am Sadi a rising senior and an avid writer, I a originally from the great country of turkey where we indeed do not eat turkeys, My English jounrey started 
+              at the prime age of 5, I was a young child who didn't know a single word of english, One day i got an ipad as a birthday present, I started watching youtube videos and
+              discivered my love for gaming and the western world, I quickly thaught myself english and asking my parents every week to visit either england and preferabliy the US,
+              At the age of 9 my dream finally came true and i went to New York cit with my aunt, I went to summer school there for 2 months. Up to that popint in mylife it was truly the most 
+              fun i had ever had 
+
             </p>
             
             <p className="text-muted-foreground mb-4">
-              My writing journey began in early childhood, when I filled countless notebooks with stories. 
-              As I've grown as a student and writer, I've developed a special interest in using rhetoric to 
-              explore complex social issues and personal experiences. The pieces collected here represent 
-              significant moments in my evolution as a writer during my junior and senior years.
+             
+
+
             </p>
           </div>
           
           <div>
             <h3 className="text-xl font-semibold mb-2">My Writing Philosophy</h3>
             <p className="text-muted-foreground mb-4">
-              I believe that effective writing serves as a bridge between minds—allowing us to share experiences 
-              and perspectives across time and space. Whether analyzing literature, constructing arguments, or 
-              reflecting on personal experiences, I approach writing as an opportunity to discover what I think 
-              by seeing what I say.
+              
+
+
             </p>
             
             <p className="text-muted-foreground">
-              Through this AP Language and Composition course, I've developed a deeper understanding of how 
-              rhetorical choices shape communication. I've learned to pay closer attention to audience, purpose, 
-              and context—skills that have transformed not just my academic writing but my ability to communicate 
-              effectively in all areas of life.
+              
+
             </p>
           </div>
           

@@ -14,14 +14,11 @@ export default function AcademicMatter() {
       <div className="bg-muted/30 p-5 rounded-lg my-6">
         <h2 className="text-xl font-semibold mb-3">About This Section</h2>
         <p className="text-muted-foreground mb-3">
-          This section presents selected essays from my AP Language and Composition coursework. 
-          Each piece includes prefatory notes explaining the assignment, my approach, and my assessment of 
-          the work's strengths and weaknesses. Multiple drafts are provided to demonstrate my writing process 
-          and growth.
+          
         </p>
         <p className="text-muted-foreground">
-          These selections showcase my ability to analyze rhetoric, construct arguments, and engage with complex texts. 
-          They represent significant milestones in my development as a critical reader and writer.
+          
+          
         </p>
       </div>
       

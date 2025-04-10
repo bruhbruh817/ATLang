@@ -1,6 +1,7 @@
+
 import { WritingSample, InspirationCategory } from "@/types";
 
-export const academicSamples: WritingSample[] = [
+ export const academicSamples: WritingSample[] = [
   {
     id: "rhetorical-analysis",
     title: "Rhetorical Analysis Essay",
@@ -8,15 +9,13 @@ export const academicSamples: WritingSample[] = [
     status: "Final Draft (A)",
     prefatory: {
       explanation: "This assignment required an analysis of rhetorical strategies in a published speech or essay.",
-      approach: "I chose Martin Luther King Jr.'s 'Letter from Birmingham Jail' and focused on how he uses ethos, pathos, and logos to build his argument against gradualism.",
-      strengthsWeaknesses: "Strengths include my analysis of King's use of biblical references. I could have developed more on the historical context that surrounded the letter.",
+      approach: "",
+      strengthsWeaknesses: "",
     },
     preview: {
       title: "Letter from Birmingham Jail: A Masterclass in Rhetoric",
       content: [
-        "In his seminal 'Letter from Birmingham Jail,' Martin Luther King Jr. demonstrates masterful command of rhetorical strategies to defend civil disobedience and critique white moderate inaction. Written in April 1963 while imprisoned for participating in non-violent demonstrations, King's letter responds to eight white clergymen who condemned the protests as 'unwise and untimely.'",
-        "King establishes his ethos immediately by adopting a measured, scholarly tone that demonstrates his education while also appealing to his religious authority as a fellow clergyman. He writes, 'I am in Birmingham because injustice is here,' presenting himself as a necessary responder to crisis rather than an outside agitator.",
-        "The most striking aspect of King's rhetoric is his use of pathos through precise, evocative language that forces readers to confront the human cost of segregation. His description of having to explain to his six-year-old daughter 'why she can't go to the public amusement park' and seeing 'ominous clouds of inferiority beginning to form in her little mental sky' transforms abstract policy discussions into painful human reality."
+        
       ]
     },
     versions: ["First Draft", "Second Draft", "Final Draft"],
@@ -35,9 +34,8 @@ export const academicSamples: WritingSample[] = [
     preview: {
       title: "The Price of Convenience: Why Digital Privacy Requires New Protections",
       content: [
-        "As artificial intelligence increasingly mediates our daily activities, from shopping recommendations to healthcare decisions, the mechanisms that collect and process our personal data have become more intrusive yet simultaneously more invisible. This technological evolution demands a corresponding evolution in privacy laws that recognizes data rights as fundamental human rights.",
-        "Current privacy frameworks remain woefully inadequate for three reasons. First, they rely on notice-and-consent models that place unreasonable burdens on individuals to understand complex data practices. Second, they fail to address the cumulative impact of data collection across platforms. Third, they provide insufficient remedies when violations occur.",
-        "The European Union's General Data Protection Regulation (GDPR) offers a useful starting point for stronger protections, but even this comprehensive framework has shown limitations in the face of AI advancements. What we need is a rights-based approach that shifts the burden of protection from individuals to the entities collecting and processing data."
+        
+
       ]
     },
     versions: ["First Draft", "Second Draft"],
@@ -45,7 +43,7 @@ export const academicSamples: WritingSample[] = [
   }
 ];
 
-export const beyondClassroomSample: WritingSample = {
+ export const beyondClassroomSample: WritingSample = {
   id: "personal-essay",
   title: "College Application Essay",
   date: "January 5, 2025",
@@ -58,16 +56,15 @@ export const beyondClassroomSample: WritingSample = {
   preview: {
     title: "Words That Bridge Worlds",
     content: [
-      "The first time Manuel read a complete sentence aloud without stumbling, his face lit up with such pure joy that I had to turn away to hide my own tears. At twelve years old, Manuel had been labeled a 'problem student' by a system that never identified his dyslexia. For eight weeks, I had been volunteering at the Community Literacy Alliance, working with Manuel twice weekly after school. That moment—his triumph over a system that had failed him—fundamentally changed how I understand educational privilege.",
-      "Before volunteering, I viewed literacy as something so fundamental it seemed almost impossible to lack in our society. But Manuel's story is not unique. According to the National Center for Education Statistics, 21% of adults in the United States read below a fifth-grade level. These statistics transformed from abstract numbers into real people as I worked with learners ranging from elementary students to grandparents, all fighting to gain access to a world that assumes literacy as a baseline.",
-      "Through this experience, I've come to understand education not simply as an individual achievement but as a collective responsibility. The barriers to learning that Manuel faced weren't the result of his abilities, but of systemic failures to recognize and accommodate different learning styles. As I look toward my future studies, I carry this understanding with me—that access to education isn't equally distributed, and that recognizing this inequality is the first step toward addressing it."
+      
+      
     ]
   },
   versions: ["First Draft", "Final Draft"],
   activeVersion: "Final Draft"
 };
 
-export const inspirationCategories: InspirationCategory[] = [
+ export const inspirationCategories: InspirationCategory[] = [
   {
     id: "authors",
     title: "Authors & Works",
