@@ -13,13 +13,8 @@ interface PortfolioProps {
 }
 
 export default function Portfolio({ initialSection, assignmentId }: PortfolioProps) {
-  const { 
-    activeSection, 
-    setActiveSection, 
-    activeAssignment, 
-    setActiveAssignment 
-  } = useActiveSection();
-
+  const { setActiveSection, setActiveAssignment } = useActiveSection();
+  
   // Set initial section and assignment if provided
   useEffect(() => {
     if (initialSection) {
@@ -50,17 +45,13 @@ export default function Portfolio({ initialSection, assignmentId }: PortfolioPro
     };
   }, []);
 
-  // Convert the nullable activeAssignment to the undefined type that AcademicMatter expects
-  // This is a workaround for the type mismatch between string|null and string|undefined
-  const assignmentForComponent = activeAssignment === null ? undefined : activeAssignment;
-
-  // Render the appropriate component based on activeSection from context
-  const renderContent = () => {
-    switch (activeSection) {
+  // Render the appropriate component based on initialSection
+  const renderSection = () => {
+    switch (initialSection) {
       case 'about':
         return <AboutMe />;
       case 'academic':
-        return <AcademicMatter assignmentId={assignmentForComponent} />;
+        return <AcademicMatter assignmentId={assignmentId} />;
       case 'beyond':
         return <BeyondClassroom />;
       case 'inspirations':
@@ -72,12 +63,7 @@ export default function Portfolio({ initialSection, assignmentId }: PortfolioPro
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-black border-blue-900">
-      <Sidebar 
-        activeSection={activeSection}
-        onSectionChange={setActiveSection}
-        activeAssignment={activeAssignment}
-        onAssignmentChange={setActiveAssignment}
-      />
+      <Sidebar />
       <main className="flex-1 overflow-y-auto relative bg-black text-blue-100">
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-full h-64 bg-gradient-to-b from-blue-900/10 to-transparent z-0 pointer-events-none"></div>
@@ -86,7 +72,7 @@ export default function Portfolio({ initialSection, assignmentId }: PortfolioPro
         {/* Content container */}
         <div className="p-6 md:p-8 max-w-5xl mx-auto relative z-10">
           <div className="relative z-10">
-            {renderContent()}
+            {renderSection()}
           </div>
           
           {/* Page decoration line */}
