@@ -61,9 +61,16 @@ export default function Portfolio({ initialSection, assignmentId }: PortfolioPro
     }
   };
 
+  const { activeSection, activeAssignment } = useActiveSection();
+
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-black border-blue-900">
-      <Sidebar />
+      <Sidebar 
+        activeSection={activeSection}
+        onSectionChange={setActiveSection}
+        activeAssignment={activeAssignment}
+        onAssignmentChange={setActiveAssignment}
+      />
       <main className="flex-1 overflow-y-auto relative bg-black text-blue-100">
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-full h-64 bg-gradient-to-b from-blue-900/10 to-transparent z-0 pointer-events-none"></div>
