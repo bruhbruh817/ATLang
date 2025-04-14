@@ -3,6 +3,11 @@ import { beyondClassroomSample } from "@/data/portfolio-data";
 import { Card, CardContent } from "@/components/ui/card";
 import beyondBgSvg from "@/assets/images/beyond-bg.svg";
 import { BookOpen, Edit, FileText } from "lucide-react";
+import photoPlaceholder1 from "@/assets/images/photo-placeholder-1.svg";
+import photoPlaceholder2 from "@/assets/images/photo-placeholder-2.svg";
+import photoPlaceholder3 from "@/assets/images/photo-placeholder-3.svg";
+import photoPlaceholder4 from "@/assets/images/photo-placeholder-4.svg";
+import galleryPlaceholder from "@/assets/images/gallery-placeholder.svg";
 
 export default function BeyondClassroom() {
   return (
@@ -30,27 +35,66 @@ export default function BeyondClassroom() {
         </div>
       </div>
       
+      {/* Photo Gallery Row */}
+      <div className="mb-12 reveal-element">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="image-frame aspect-square overflow-hidden">
+            <img src={photoPlaceholder1} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div className="image-frame aspect-square overflow-hidden">
+            <img src={photoPlaceholder2} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div className="image-frame aspect-square overflow-hidden">
+            <img src={photoPlaceholder3} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div className="image-frame aspect-square overflow-hidden">
+            <img src={photoPlaceholder1} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          </div>
+        </div>
+      </div>
+      
       {/* Intro Card */}
       <Card className="content-card animated-bg mb-12 reveal-element">
         <CardContent className="p-8">
           <h2 className="section-heading">About This Section</h2>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             <div className="lg:col-span-3">
-              <p className="text-lg mb-4">
-                This section showcases writing I've done outside of formal class assignments. These pieces demonstrate 
-                how I've applied the skills developed in AP Language and Composition to other contexts, including college 
-                applications, creative writing, and personal projects.
-              </p>
-              <p className="text-lg">
-                While these works weren't created for a grade, they represent important aspects of my identity as a writer 
-                and show how writing has become an essential tool for self-expression and communication in my life beyond 
-                academic requirements.
-              </p>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                <div className="md:col-span-3">
+                  <p className="text-lg mb-4">
+                    This section showcases writing I've done outside of formal class assignments. These pieces demonstrate 
+                    how I've applied the skills developed in AP Language and Composition to other contexts, including college 
+                    applications, creative writing, and personal projects.
+                  </p>
+                  <p className="text-lg">
+                    While these works weren't created for a grade, they represent important aspects of my identity as a writer 
+                    and show how writing has become an essential tool for self-expression and communication in my life beyond 
+                    academic requirements.
+                  </p>
+                </div>
+                
+                <div className="md:col-span-1">
+                  <div className="image-frame h-full overflow-hidden">
+                    <img 
+                      src={photoPlaceholder4} 
+                      alt="Add photo here" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
             
             <div className="lg:col-span-2">
               <div className="bg-white/70 p-6 rounded-xl border border-primary/10 shadow-sm h-full flex flex-col justify-center">
                 <h3 className="text-xl font-semibold mb-4 text-primary text-center">Why It Matters</h3>
+                <div className="image-frame w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
+                  <img 
+                    src={photoPlaceholder1} 
+                    alt="Add photo here" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
                 <p className="text-center italic mb-6">
                   "The writing we do for ourselves often reveals more about our authentic voice and interests than assigned work."
                 </p>
@@ -64,54 +108,88 @@ export default function BeyondClassroom() {
         </CardContent>
       </Card>
       
+      {/* Image Row - Mid section */}
+      <div className="reveal-element mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="image-frame aspect-video overflow-hidden">
+            <img src={photoPlaceholder3} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div className="image-frame aspect-video overflow-hidden">
+            <img src={photoPlaceholder1} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          </div>
+        </div>
+      </div>
+      
       {/* Writing Sample */}
       <div className="reveal-element mb-12">
         <WritingSample sample={beyondClassroomSample} />
       </div>
       
-      {/* Other Writing Projects */}
-      <Card className="shadow-lg overflow-hidden border border-primary/10 bg-white reveal-element">
+      {/* Other Writing Projects with Photos */}
+      <Card className="shadow-lg overflow-hidden border border-primary/10 bg-white reveal-element mb-12">
         <div className="bg-primary/5 border-b border-primary/10 px-6 py-5">
           <h3 className="text-2xl font-semibold text-primary">Other Beyond-the-Classroom Writing</h3>
         </div>
         
         <div className="p-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-primary/5 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <BookOpen className="w-6 h-6 text-primary" />
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-primary/5 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+              <div className="image-frame aspect-[4/3] overflow-hidden">
+                <img src={photoPlaceholder3} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
-              <h4 className="text-xl font-semibold mb-2">School Newspaper Articles</h4>
-              <p className="text-gray-700">
-                As features editor for the Westlake Chronicle, I've written several articles exploring student life, 
-                including an in-depth piece on mental health resources that received regional recognition.
-              </p>
+              <div className="p-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <BookOpen className="w-6 h-6 text-primary" />
+                </div>
+                <h4 className="text-xl font-semibold mb-2">School Newspaper Articles</h4>
+                <p className="text-gray-700">
+                  As features editor for the Westlake Chronicle, I've written several articles exploring student life, 
+                  including an in-depth piece on mental health resources that received regional recognition.
+                </p>
+              </div>
             </div>
             
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-primary/5 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <Edit className="w-6 h-6 text-primary" />
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-primary/5 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+              <div className="image-frame aspect-[4/3] overflow-hidden">
+                <img src={photoPlaceholder1} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
-              <h4 className="text-xl font-semibold mb-2">Creative Writing Collection</h4>
-              <p className="text-gray-700">
-                A series of short stories exploring themes of identity and belonging, developed through the 
-                school's creative writing club.
-              </p>
+              <div className="p-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <Edit className="w-6 h-6 text-primary" />
+                </div>
+                <h4 className="text-xl font-semibold mb-2">Creative Writing Collection</h4>
+                <p className="text-gray-700">
+                  A series of short stories exploring themes of identity and belonging, developed through the 
+                  school's creative writing club.
+                </p>
+              </div>
             </div>
             
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-primary/5 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <FileText className="w-6 h-6 text-primary" />
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-primary/5 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+              <div className="image-frame aspect-[4/3] overflow-hidden">
+                <img src={photoPlaceholder2} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
-              <h4 className="text-xl font-semibold mb-2">Community Blog</h4>
-              <p className="text-gray-700">
-                Regular contributions to a local environmental action group's blog, focusing on youth perspectives 
-                on sustainability and climate action.
-              </p>
+              <div className="p-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <FileText className="w-6 h-6 text-primary" />
+                </div>
+                <h4 className="text-xl font-semibold mb-2">Community Blog</h4>
+                <p className="text-gray-700">
+                  Regular contributions to a local environmental action group's blog, focusing on youth perspectives 
+                  on sustainability and climate action.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </Card>
+      
+      {/* Full width gallery image */}
+      <div className="reveal-element mb-12">
+        <div className="image-frame w-full aspect-[21/9] overflow-hidden">
+          <img src={galleryPlaceholder} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+      </div>
       
       {/* Footer Note */}
       <div className="text-center my-12 reveal-element">
