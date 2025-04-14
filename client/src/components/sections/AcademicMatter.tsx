@@ -120,15 +120,15 @@ export default function AcademicMatter() {
                   className="space-y-6 mt-0 tab-content"
                 >
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                    <div className="bg-slate-800/80 rounded-lg p-5 border border-blue-900/50">
+                    <div className="bg-slate-900/80 rounded-lg p-5 border border-blue-900">
                       <h3 className="text-lg font-semibold mb-2 text-blue-400">Assignment</h3>
                       <p>{sample.prefatory.explanation}</p>
                     </div>
-                    <div className="bg-slate-800/80 rounded-lg p-5 border border-blue-900/50">
+                    <div className="bg-slate-900/80 rounded-lg p-5 border border-blue-900">
                       <h3 className="text-lg font-semibold mb-2 text-blue-400">My Approach</h3>
                       <p>{sample.prefatory.approach}</p>
                     </div>
-                    <div className="bg-slate-800/80 rounded-lg p-5 border border-blue-900/50">
+                    <div className="bg-slate-900/80 rounded-lg p-5 border border-blue-900">
                       <h3 className="text-lg font-semibold mb-2 text-blue-400">Strengths & Weaknesses</h3>
                       <p>{sample.prefatory.strengthsWeaknesses}</p>
                     </div>

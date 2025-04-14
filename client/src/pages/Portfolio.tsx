@@ -25,7 +25,7 @@ export default function Portfolio() {
 
   return (
     <ActiveSectionProvider>
-      <div className="flex flex-col md:flex-row min-h-screen bg-white backdrop-blur-sm">
+      <div className="flex flex-col md:flex-row min-h-screen bg-black border-blue-900">
         <Sidebar />
         <MainContent />
       </div>
