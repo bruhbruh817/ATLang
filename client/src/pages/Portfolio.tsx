@@ -1,9 +1,28 @@
 import Sidebar from "@/components/layout/Sidebar";
 import MainContent from "@/components/layout/MainContent";
 import { useEffect } from "react";
-import { ActiveSectionProvider } from "@/context/ActiveSectionContext";
+import { useActiveSection } from "@/context/ActiveSectionContext";
+import { Section } from "@/context/ActiveSectionContext";
 
-export default function Portfolio() {
+interface PortfolioProps {
+  initialSection?: Section;
+  assignmentId?: string;
+}
+
+export default function Portfolio({ initialSection, assignmentId }: PortfolioProps) {
+  const { setActiveSection, setActiveAssignment } = useActiveSection();
+  
+  // Set initial section and assignment if provided
+  useEffect(() => {
+    if (initialSection) {
+      setActiveSection(initialSection);
+    }
+    
+    if (assignmentId) {
+      setActiveAssignment(assignmentId);
+    }
+  }, [initialSection, assignmentId, setActiveSection, setActiveAssignment]);
+  
   // Add scroll reveal effect for elements
   useEffect(() => {
     const revealElements = document.querySelectorAll('.reveal-element');
@@ -24,11 +43,9 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <ActiveSectionProvider>
-      <div className="flex flex-col md:flex-row min-h-screen bg-black border-blue-900">
-        <Sidebar />
-        <MainContent />
-      </div>
-    </ActiveSectionProvider>
+    <div className="flex flex-col md:flex-row min-h-screen bg-black border-blue-900">
+      <Sidebar />
+      <MainContent />
+    </div>
   );
 }
