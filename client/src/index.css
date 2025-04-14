@@ -21,12 +21,22 @@
   p, span, a, button {
     font-family: 'Poppins', sans-serif;
   }
+  
+  /* Force all backgrounds to be black */
+  div, main, section, header, footer, aside, nav {
+    @apply bg-black;
+  }
+  
+  /* Override all form fields to be dark */
+  input, textarea, select, button {
+    @apply bg-black border-blue-900 text-blue-100;
+  }
 }
 
 @layer components {
   .hero-section {
     @apply relative flex flex-col items-center justify-center min-h-[40vh] text-center p-6 overflow-hidden;
-    @apply bg-blue-900/30 border border-blue-900;
+    @apply bg-blue-900/30 border-2 border-blue-800;
     background-image: linear-gradient(to bottom, rgba(30, 58, 138, 0.3), rgba(30, 64, 175, 0.1));
   }
   
@@ -51,7 +61,7 @@
   
   .content-card {
     @apply shadow-lg p-6 rounded-lg transition-all duration-300;
-    @apply bg-slate-900/80 border border-blue-900;
+    @apply bg-black border-2 border-blue-900;
   }
   
   .content-card:hover {
@@ -82,7 +92,7 @@
   
   /* Tabs styling */
   .tabs-list {
-    @apply bg-black border border-blue-900;
+    @apply bg-black border-2 border-blue-900;
   }
   
   .tab-trigger {
@@ -90,24 +100,38 @@
   }
   
   .tab-content {
-    @apply bg-transparent;
+    @apply bg-black;
   }
   
-  /* Force dark theme overrides */
-  .bg-white, .bg-background {
+  /* Force dark theme overrides - !important tags to ensure override */
+  .bg-white, .bg-background, .bg-slate-100, .bg-slate-200, .bg-slate-300, 
+  .bg-slate-400, .bg-slate-500, .bg-slate-600, .bg-slate-700, 
+  .bg-slate-800, .bg-slate-900 {
     @apply bg-black !important;
   }
   
-  .text-black, .text-foreground {
+  .text-black, .text-slate-900, .text-slate-800, .text-foreground {
     @apply text-blue-100 !important;
   }
   
-  .border-slate-700 {
-    @apply border-blue-900 !important;
+  .border, .border-slate-100, .border-slate-200, .border-slate-300, 
+  .border-slate-400, .border-slate-500, .border-slate-600, .border-slate-700, 
+  .border-slate-800, .border-slate-900 {
+    @apply border-blue-800 !important;
   }
   
-  .bg-slate-800 {
-    @apply bg-black !important;
+  button, a {
+    background-color: black !important;
+    color: #93c5fd !important; /* blue-300 */
+  }
+  
+  button:hover, a:hover {
+    background-color: #1e3a8a !important; /* blue-900 */
+    color: #e0f2fe !important; /* blue-100 */
+  }
+  
+  .blue-button {
+    background-color: #1e3a8a !important; /* blue-900 */
   }
   
   /* Reveal animation */
