@@ -6,10 +6,21 @@ import { academicSamples } from '@/data/portfolio-data';
 import { Link, useLocation } from 'wouter';
 
 export default function Sidebar() {
-  const { activeSection, setActiveSection } = useActiveSection();
+  // Use location from wouter to determine active section
+  const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [academicDropdownOpen, setAcademicDropdownOpen] = useState(false);
   const { activeAssignment, setActiveAssignment } = useActiveSection();
+  
+  // Derive activeSection from URL
+  const getActiveSection = () => {
+    if (location.startsWith('/academic')) return 'academic';
+    if (location.startsWith('/beyond')) return 'beyond';
+    if (location.startsWith('/inspirations')) return 'inspirations';
+    return 'about'; // Default or /about
+  };
+  
+  const activeSection = getActiveSection();
 
   // Auto-expand academic dropdown when in academic section
   useEffect(() => {
@@ -26,13 +37,11 @@ export default function Sidebar() {
     setAcademicDropdownOpen(!academicDropdownOpen);
     
     // When opening academic section, set it active
-    if (!academicDropdownOpen) {
-      setActiveSection('academic');
-    }
+    // URL-based navigation handles this now
   };
 
   const handleAssignmentClick = (assignmentId: string) => {
-    setActiveSection('academic');
+    // Use URL-based navigation instead of context
     setActiveAssignment(assignmentId);
     if (mobileMenuOpen) setMobileMenuOpen(false);
   };

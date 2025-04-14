@@ -5,7 +5,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { FileText, BookOpen, PenTool } from "lucide-react";
 import { useActiveSection } from "@/context/ActiveSectionContext";
 
-export default function AcademicMatter() {
+interface AcademicMatterProps {
+  assignmentId?: string;
+}
+
+export default function AcademicMatter({ assignmentId }: AcademicMatterProps = {}) {
   const [activeTab, setActiveTab] = useState(academicSamples[0].id);
   const { activeAssignment } = useActiveSection();
   
