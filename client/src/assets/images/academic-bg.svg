@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="300" viewBox="0 0 800 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="300" fill="#f9f9fc"/>
+  <path d="M0 150C133.333 150 200 50 400 50C600 50 666.667 150 800 150" stroke="#e0e1ff" stroke-width="20"/>
+  <path d="M0 230C133.333 230 200 130 400 130C600 130 666.667 230 800 230" stroke="#d1d2ff" stroke-width="15"/>
+  <path d="M0 280C133.333 280 200 200 400 200C600 200 666.667 280 800 280" stroke="#c1c2ff" stroke-width="10"/>
+  <rect x="50" y="75" width="120" height="150" fill="#f0f0ff" stroke="#e0e1ff" stroke-width="2"/>
+  <rect x="70" y="95" width="80" height="110" fill="#ffffff" stroke="#d1d2ff" stroke-width="1"/>
+  <path d="M90 115H130" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M90 125H130" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M90 135H130" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M90 145H130" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M90 155H130" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M90 165H130" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M90 175H130" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M90 185H130" stroke="#c1c2ff" stroke-width="1"/>
+  <rect x="360" y="75" width="80" height="100" fill="#f0f0ff" stroke="#e0e1ff" stroke-width="2"/>
+  <rect x="370" y="85" width="60" height="80" fill="#ffffff" stroke="#d1d2ff" stroke-width="1"/>
+  <path d="M380 95H420" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M380 105H420" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M380 115H420" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M380 125H420" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M380 135H420" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M380 145H420" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M380 155H420" stroke="#c1c2ff" stroke-width="1"/>
+  <rect x="630" y="125" width="100" height="120" fill="#f0f0ff" stroke="#e0e1ff" stroke-width="2"/>
+  <rect x="640" y="135" width="80" height="100" fill="#ffffff" stroke="#d1d2ff" stroke-width="1"/>
+  <path d="M650 145H710" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M650 155H710" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M650 165H710" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M650 175H710" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M650 185H710" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M650 195H710" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M650 205H710" stroke="#c1c2ff" stroke-width="1"/>
+  <path d="M650 215H710" stroke="#c1c2ff" stroke-width="1"/>
+</svg>
