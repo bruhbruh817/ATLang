@@ -13,8 +13,13 @@ interface PortfolioProps {
 }
 
 export default function Portfolio({ initialSection, assignmentId }: PortfolioProps) {
-  const { setActiveSection, setActiveAssignment } = useActiveSection();
-  
+  const { 
+    activeSection, 
+    setActiveSection, 
+    activeAssignment, 
+    setActiveAssignment 
+  } = useActiveSection();
+
   // Set initial section and assignment if provided
   useEffect(() => {
     if (initialSection) {
@@ -45,13 +50,17 @@ export default function Portfolio({ initialSection, assignmentId }: PortfolioPro
     };
   }, []);
 
-  // Render the appropriate component based on initialSection
-  const renderSection = () => {
-    switch (initialSection) {
+  // Convert the nullable activeAssignment to the undefined type that AcademicMatter expects
+  // This is a workaround for the type mismatch between string|null and string|undefined
+  const assignmentForComponent = activeAssignment === null ? undefined : activeAssignment;
+
+  // Render the appropriate component based on activeSection from context
+  const renderContent = () => {
+    switch (activeSection) {
       case 'about':
         return <AboutMe />;
       case 'academic':
-        return <AcademicMatter assignmentId={assignmentId} />;
+        return <AcademicMatter assignmentId={assignmentForComponent} />;
       case 'beyond':
         return <BeyondClassroom />;
       case 'inspirations':
@@ -60,8 +69,6 @@ export default function Portfolio({ initialSection, assignmentId }: PortfolioPro
         return <AboutMe />;
     }
   };
-
-  const { activeSection, activeAssignment } = useActiveSection();
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-black border-blue-900">
@@ -79,7 +86,7 @@ export default function Portfolio({ initialSection, assignmentId }: PortfolioPro
         {/* Content container */}
         <div className="p-6 md:p-8 max-w-5xl mx-auto relative z-10">
           <div className="relative z-10">
-            {renderSection()}
+            {renderContent()}
           </div>
           
           {/* Page decoration line */}
