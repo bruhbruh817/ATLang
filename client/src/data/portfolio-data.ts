@@ -20,7 +20,27 @@ export const academicSamples: WritingSample[] = [
       ]
     },
     versions: ["First Draft", "Second Draft", "Final Draft"],
-    activeVersion: "Final Draft"
+    activeVersion: "Final Draft",
+    drafts: [
+      {
+        type: 'pdf',
+        title: 'First Draft - Rhetorical Analysis',
+        description: 'Initial analysis with instructor comments',
+        filePath: '/drafts/rhetorical-first-draft.pdf'
+      },
+      {
+        type: 'pdf',
+        title: 'Second Draft - Rhetorical Analysis',
+        description: 'Revised version after peer feedback',
+        filePath: '/drafts/rhetorical-second-draft.pdf'
+      },
+      {
+        type: 'image',
+        title: 'Planning Document',
+        description: 'Initial brainstorming and outline',
+        filePath: '/drafts/rhetorical-planning.jpg'
+      }
+    ]
   },
   {
     id: "argumentative-essay",
@@ -41,7 +61,21 @@ export const academicSamples: WritingSample[] = [
       ]
     },
     versions: ["First Draft", "Second Draft"],
-    activeVersion: "Second Draft"
+    activeVersion: "Second Draft",
+    drafts: [
+      {
+        type: 'pdf',
+        title: 'First Draft - Digital Privacy Essay',
+        description: 'Initial draft with thesis statement and main arguments',
+        filePath: '/drafts/privacy-first-draft.pdf'
+      },
+      {
+        type: 'image',
+        title: 'Research Notes',
+        description: 'Key data points and sources',
+        filePath: '/drafts/privacy-research.jpg'
+      }
+    ]
   },
   {
     id: "literary-analysis",
@@ -62,7 +96,27 @@ export const academicSamples: WritingSample[] = [
       ]
     },
     versions: ["First Draft", "Peer Review Draft", "Final Draft"],
-    activeVersion: "Final Draft"
+    activeVersion: "Final Draft",
+    drafts: [
+      {
+        type: 'pdf',
+        title: 'First Draft - Gatsby Analysis',
+        description: 'Original submission with instructor feedback',
+        filePath: '/drafts/gatsby-first-draft.pdf'
+      },
+      {
+        type: 'pdf',
+        title: 'Peer Review Draft',
+        description: 'Version with peer comments',
+        filePath: '/drafts/gatsby-peer-review.pdf'
+      },
+      {
+        type: 'image',
+        title: 'Symbol Analysis Chart',
+        description: 'Visual breakdown of key symbols',
+        filePath: '/drafts/gatsby-symbols.jpg'
+      }
+    ]
   }
 ];
 
@@ -85,7 +139,30 @@ export const beyondClassroomSample: WritingSample = {
     ]
   },
   versions: ["First Draft", "Final Draft"],
-  activeVersion: "Final Draft"
+  activeVersion: "Final Draft",
+  drafts: [
+    {
+      type: 'pdf',
+      title: 'College Essay - Draft Version',
+      description: 'Initial write-up with counselor feedback',
+      filePath: '/drafts/college-essay-draft.pdf'
+    },
+    {
+      type: 'text',
+      title: 'Reflection Notes',
+      description: 'Personal reflections on the writing process',
+      content: [
+        "What made this essay challenging was balancing the personal narrative with broader observations about education inequality.",
+        "I revised the opening paragraph three times to make it more engaging while remaining authentic to my experience."
+      ]
+    },
+    {
+      type: 'image',
+      title: 'Volunteer Certificate',
+      description: 'Certificate from Community Literacy Alliance',
+      filePath: '/drafts/volunteer-certificate.jpg'
+    }
+  ]
 };
 
 export const inspirationCategories: InspirationCategory[] = [

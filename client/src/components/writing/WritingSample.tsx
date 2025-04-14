@@ -189,6 +189,13 @@ export default function WritingSample({ sample }: WritingSampleProps) {
                                 {draft.description && (
                                   <p className="text-sm text-blue-300">{draft.description}</p>
                                 )}
+                                {draft.type === 'text' && draft.content && (
+                                  <div className="mt-2 p-3 bg-blue-900/20 rounded-md border border-blue-800">
+                                    {draft.content.map((paragraph, idx) => (
+                                      <p key={idx} className="text-sm text-blue-100 mb-2 last:mb-0">{paragraph}</p>
+                                    ))}
+                                  </div>
+                                )}
                               </div>
                               
                               {draft.filePath && (
