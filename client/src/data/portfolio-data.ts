@@ -1,4 +1,4 @@
-import { WritingSample, InspirationCategory } from "@/types";
+import { WritingSample, InspirationCategory, DraftFile } from "@/types";
 
 export const academicSamples: WritingSample[] = [
   {

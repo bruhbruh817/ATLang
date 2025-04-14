@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { WritingSample as WritingSampleType } from "@/types";
+import { WritingSample as WritingSampleType, DraftFile } from "@/types";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { CalendarIcon, FileText, BookText, Pencil, History } from 'lucide-react';
+import { CalendarIcon, FileText, BookText, Pencil, History, Image, FileIcon, ExternalLink } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import writingBgSvg from "@/assets/images/writing-bg.svg";
 
 interface WritingSampleProps {
@@ -122,58 +123,98 @@ export default function WritingSample({ sample }: WritingSampleProps) {
         </TabsContent>
 
         <TabsContent value="versions" className="px-6 pt-6">
-          <CardContent className="space-y-4 p-0 pb-6">
+          <CardContent className="space-y-6 p-0 pb-6">
             <div className="bg-black rounded-xl p-5 shadow-sm border-2 border-blue-900">
               <h3 className="text-lg md:text-xl font-semibold mb-4 border-b-2 border-blue-800 pb-2 text-blue-300">
                 Writing Process & Revisions
               </h3>
-              <div className="grid gap-3">
+              
+              <div className="grid gap-5">
                 {sample.versions.map((version, index) => (
-                  <div
-                    key={version}
-                    className={`flex items-center p-4 rounded-lg transition-all duration-200 ${
-                      version === sample.activeVersion
-                        ? "bg-blue-900/50 border-2 border-blue-700 shadow-sm"
-                        : "bg-black border-2 border-blue-900 hover:border-blue-700"
-                    }`}
-                  >
-                    <div className="mr-3 flex-shrink-0">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                  <div key={version} className="space-y-4">
+                    <div
+                      className={`flex items-center p-4 rounded-lg transition-all duration-200 ${
                         version === sample.activeVersion
-                          ? "bg-blue-700 text-blue-100"
-                          : "bg-blue-900/30 text-blue-300 border-2 border-blue-800"
-                      }`}>
-                        {index + 1}
+                          ? "bg-blue-900/50 border-2 border-blue-700 shadow-sm"
+                          : "bg-black border-2 border-blue-900 hover:border-blue-700"
+                      }`}
+                    >
+                      <div className="mr-3 flex-shrink-0">
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                          version === sample.activeVersion
+                            ? "bg-blue-700 text-blue-100"
+                            : "bg-blue-900/30 text-blue-300 border-2 border-blue-800"
+                        }`}>
+                          {index + 1}
+                        </div>
                       </div>
+                      
+                      <div className="flex-grow">
+                        <h4 className={
+                          version === sample.activeVersion
+                            ? "font-medium text-blue-100"
+                            : "font-medium text-blue-300"
+                        }>
+                          {version}
+                        </h4>
+                        <p className="text-sm text-blue-200">
+                          {index === 0 ? "Initial draft" : 
+                          index === sample.versions.length - 1 ? "Final version" : 
+                          `Revision #${index}`}
+                        </p>
+                      </div>
+                      
+                      {version === sample.activeVersion && (
+                        <Badge variant="secondary" className="ml-auto bg-black border-2 border-blue-700 text-blue-100">
+                          Current
+                        </Badge>
+                      )}
                     </div>
                     
-                    <div className="flex-grow">
-                      <h4 className={
-                        version === sample.activeVersion
-                          ? "font-medium text-blue-100"
-                          : "font-medium text-blue-300"
-                      }>
-                        {version}
-                      </h4>
-                      <p className="text-sm text-blue-200">
-                        {index === 0 ? "Initial draft" : 
-                         index === sample.versions.length - 1 ? "Final version" : 
-                         `Revision #${index}`}
-                      </p>
-                    </div>
-                    
-                    {version === sample.activeVersion && (
-                      <Badge variant="secondary" className="ml-auto bg-black border-2 border-blue-700 text-blue-100">
-                        Current
-                      </Badge>
+                    {/* Draft Files Section - Only show if the sample has drafts */}
+                    {sample.drafts && sample.drafts.length > 0 && index === 0 && (
+                      <div className="ml-12 space-y-3">
+                        <h5 className="text-md font-medium text-blue-300 border-b border-blue-800 pb-2">
+                          Draft Files
+                        </h5>
+                        <div className="grid gap-3">
+                          {sample.drafts.map((draft, draftIndex) => (
+                            <div key={draftIndex} className="bg-blue-900/10 border border-blue-800 rounded-lg p-3 flex items-center">
+                              {draft.type === 'pdf' && <FileIcon className="h-8 w-8 text-blue-500 mr-3" />}
+                              {draft.type === 'image' && <Image className="h-8 w-8 text-blue-500 mr-3" />}
+                              {draft.type === 'text' && <FileText className="h-8 w-8 text-blue-500 mr-3" />}
+                              
+                              <div className="flex-grow">
+                                <h6 className="font-medium text-blue-200">{draft.title}</h6>
+                                {draft.description && (
+                                  <p className="text-sm text-blue-300">{draft.description}</p>
+                                )}
+                              </div>
+                              
+                              {draft.filePath && (
+                                <Button 
+                                  variant="outline" 
+                                  size="sm"
+                                  className="ml-2 border-blue-700 text-blue-100"
+                                >
+                                  <ExternalLink className="h-4 w-4 mr-1" />
+                                  View
+                                </Button>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     )}
                   </div>
                 ))}
               </div>
               
-              <p className="text-sm text-blue-300 mt-5 italic">
-                Note: Full document versions would be available to view or download in a complete portfolio.
-              </p>
+              {(!sample.drafts || sample.drafts.length === 0) && (
+                <p className="text-sm text-blue-300 mt-5 italic">
+                  Note: Full document versions would be available to view or download in a complete portfolio.
+                </p>
+              )}
             </div>
           </CardContent>
         </TabsContent>
