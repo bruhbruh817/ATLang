@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { useActiveSection } from '@/context/ActiveSectionContext';
 import { ChevronDown, ChevronUp, BookOpen, User, PenTool, Lightbulb, Menu, X, FileText } from 'lucide-react';
 import { academicSamples } from '@/data/portfolio-data';
 import { Link, useLocation } from 'wouter';
@@ -10,7 +9,6 @@ export default function Sidebar() {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [academicDropdownOpen, setAcademicDropdownOpen] = useState(false);
-  const { activeAssignment, setActiveAssignment } = useActiveSection();
   
   // Derive activeSection from URL
   const getActiveSection = () => {
@@ -20,7 +18,16 @@ export default function Sidebar() {
     return 'about'; // Default or /about
   };
   
+  // Get current assignment ID from URL
+  const getActiveAssignment = () => {
+    if (location.startsWith('/academic/')) {
+      return location.split('/academic/')[1];
+    }
+    return null;
+  };
+  
   const activeSection = getActiveSection();
+  const activeAssignment = getActiveAssignment();
 
   // Auto-expand academic dropdown when in academic section
   useEffect(() => {
@@ -35,15 +42,6 @@ export default function Sidebar() {
 
   const toggleAcademicDropdown = () => {
     setAcademicDropdownOpen(!academicDropdownOpen);
-    
-    // When opening academic section, set it active
-    // URL-based navigation handles this now
-  };
-
-  const handleAssignmentClick = (assignmentId: string) => {
-    // Use URL-based navigation instead of context
-    setActiveAssignment(assignmentId);
-    if (mobileMenuOpen) setMobileMenuOpen(false);
   };
 
   return (

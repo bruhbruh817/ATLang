@@ -3,22 +3,32 @@ import { academicSamples } from "@/data/portfolio-data";
 import academicBgSvg from "@/assets/images/academic-bg.svg";
 import { Card, CardContent } from "@/components/ui/card";
 import { FileText, BookOpen, PenTool } from "lucide-react";
-import { useActiveSection } from "@/context/ActiveSectionContext";
+import { useLocation } from "wouter";
 
 interface AcademicMatterProps {
   assignmentId?: string;
 }
 
-export default function AcademicMatter({ assignmentId }: AcademicMatterProps = {}) {
+export default function AcademicMatter({ assignmentId }: AcademicMatterProps) {
   const [activeTab, setActiveTab] = useState(academicSamples[0].id);
-  const { activeAssignment } = useActiveSection();
+  const [location] = useLocation();
   
-  // Use the activeAssignment from context if available
+  // Extract assignment ID from URL if not directly provided
   useEffect(() => {
-    if (activeAssignment && academicSamples.some(sample => sample.id === activeAssignment)) {
-      setActiveTab(activeAssignment);
+    // First check prop
+    if (assignmentId && academicSamples.some(sample => sample.id === assignmentId)) {
+      setActiveTab(assignmentId);
+      return;
     }
-  }, [activeAssignment]);
+    
+    // Then check URL
+    if (location.startsWith('/academic/')) {
+      const urlAssignmentId = location.split('/academic/')[1];
+      if (urlAssignmentId && academicSamples.some(sample => sample.id === urlAssignmentId)) {
+        setActiveTab(urlAssignmentId);
+      }
+    }
+  }, [assignmentId, location]);
   
   return (
     <div className="space-y-8">
