@@ -42,6 +42,27 @@ export const academicSamples: WritingSample[] = [
     },
     versions: ["First Draft", "Second Draft"],
     activeVersion: "Second Draft"
+  },
+  {
+    id: "literary-analysis",
+    title: "Literary Analysis - The Great Gatsby",
+    date: "April 2, 2025",
+    status: "Final Draft (A-)",
+    prefatory: {
+      explanation: "This assignment asked us to analyze a major theme in F. Scott Fitzgerald's 'The Great Gatsby' and discuss its relevance to contemporary American society.",
+      approach: "I focused on the theme of the American Dream and its corruption, drawing parallels between the 1920s setting and today's wealth inequality and social mobility challenges.",
+      strengthsWeaknesses: "My analysis of symbolism is strong, particularly regarding the green light and the Valley of Ashes. I could have incorporated more secondary sources to support my modern-day connections."
+    },
+    preview: {
+      title: "The Mirage of Green Light: Gatsby's Dream and America's Illusion",
+      content: [
+        "F. Scott Fitzgerald's 'The Great Gatsby' endures as a masterpiece not merely for its artistic prose or vivid characterization, but because it offers a devastating critique of the American Dream that remains hauntingly relevant a century later. Through the tragic figure of Jay Gatsby—a man who transforms himself completely in pursuit of wealth, status, and ultimately love—Fitzgerald reveals how the promises of American meritocracy often mask a system where privilege determines outcomes more than perseverance.",
+        "The novel's most enduring symbol, the green light at the end of Daisy's dock, represents not just Gatsby's longing for Daisy but the tantalizing promise of American opportunity itself: always visible, seemingly within reach, yet ultimately unattainable for those born without advantage. As Fitzgerald writes, Gatsby believed in 'the orgastic future that year by year recedes before us.' This eternal hope, followed by inevitable disappointment, mirrors the experience of countless Americans who find social mobility increasingly elusive despite their efforts.",
+        "The geographic stratification in the novel—from the old-money elegance of East Egg to the nouveau riche spectacle of West Egg to the desolate 'Valley of Ashes'—presents a physical manifestation of America's class divisions. Today, similar geographic divides persist in American cities, where zip codes remain powerful predictors of educational opportunity, health outcomes, and economic prospects. Like the characters in Gatsby, Americans still find themselves sorted into environments that either nurture or hinder their ambitions based largely on accidents of birth."
+      ]
+    },
+    versions: ["First Draft", "Peer Review Draft", "Final Draft"],
+    activeVersion: "Final Draft"
   }
 ];
 
