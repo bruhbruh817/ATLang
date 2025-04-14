@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { academicSamples } from "@/data/portfolio-data";
 import academicBgSvg from "@/assets/images/academic-bg.svg";
 import { Card, CardContent } from "@/components/ui/card";
-import { FileText, BookOpen, PenTool, ChevronDown, ChevronUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { FileText, BookOpen, PenTool } from "lucide-react";
+import { useActiveSection } from "@/context/ActiveSectionContext";
 
 export default function AcademicMatter() {
   const [activeTab, setActiveTab] = useState(academicSamples[0].id);
-  const [showTabs, setShowTabs] = useState(true);
-
+  const { activeAssignment } = useActiveSection();
+  
+  // Use the activeAssignment from context if available
+  useEffect(() => {
+    if (activeAssignment && academicSamples.some(sample => sample.id === activeAssignment)) {
+      setActiveTab(activeAssignment);
+    }
+  }, [activeAssignment]);
+  
   return (
     <div className="space-y-8">
       {/* Hero section */}
@@ -30,35 +37,6 @@ export default function AcademicMatter() {
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-transparent mix-blend-overlay"></div>
             </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Simple Buttons for 3 Assignments */}
-      <div className="mb-8">
-        <div className="bg-black p-4 border-2 border-blue-700 rounded-lg">
-          <h2 className="text-2xl font-bold text-blue-100 text-center mb-5">My 3 Academic Writing Assignments</h2>
-          
-          <div className="grid grid-cols-1 gap-4">
-            {academicSamples.map((sample, index) => (
-              <Button 
-                key={sample.id}
-                className={`w-full p-6 justify-start text-xl ${activeTab === sample.id ? 'bg-blue-900 text-white' : 'bg-black text-blue-300 border-2 border-blue-800'}`}
-                onClick={() => setActiveTab(sample.id)}
-              >
-                <div className="flex items-center">
-                  <div className="w-12 h-12 flex items-center justify-center bg-black rounded-full mr-4 border-2 border-blue-700">
-                    {index === 0 ? <FileText className="w-6 h-6 text-blue-300" /> : 
-                     index === 1 ? <PenTool className="w-6 h-6 text-blue-300" /> : 
-                     <BookOpen className="w-6 h-6 text-blue-300" />}
-                  </div>
-                  <div className="text-left">
-                    <div className="font-bold">{sample.title}</div>
-                    <div className="text-sm opacity-80">{sample.date} • {sample.status}</div>
-                  </div>
-                </div>
-              </Button>
-            ))}
           </div>
         </div>
       </div>
@@ -107,6 +85,31 @@ export default function AcademicMatter() {
           </div>
         </CardContent>
       </Card>
+      
+      {/* Assignment Selection Guide - Mobile Only */}
+      <div className="md:hidden bg-black border-2 border-blue-900 rounded-lg p-4 mb-6 text-center">
+        <p className="text-blue-300">Use the sidebar menu to select a specific assignment</p>
+        <div className="grid grid-cols-3 gap-2 mt-3">
+          {academicSamples.map((sample, index) => (
+            <div 
+              key={sample.id}
+              className={`p-2 rounded-lg cursor-pointer text-center ${
+                activeTab === sample.id 
+                ? 'bg-blue-900 text-blue-100 border-2 border-blue-700' 
+                : 'bg-black text-blue-300 border-2 border-blue-800'
+              }`}
+              onClick={() => setActiveTab(sample.id)}
+            >
+              <div className="flex flex-col items-center">
+                {index === 0 ? <FileText className="w-5 h-5 mb-1" /> : 
+                 index === 1 ? <PenTool className="w-5 h-5 mb-1" /> : 
+                 <BookOpen className="w-5 h-5 mb-1" />}
+                <span className="text-xs line-clamp-1">{sample.title.split(' ')[0]}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
       
       {/* Current Selected Assignment */}
       {academicSamples.map((sample) => {
