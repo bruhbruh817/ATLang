@@ -1,10 +1,10 @@
-import { createRoot } from "react-dom/client";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import App from "./App";
-import "./index.css";
-import { ActiveSectionProvider } from "./context/ActiveSectionContext";
+import "@/styles/index.css"; // if you use Tailwind or global styles
 
-createRoot(document.getElementById("root")!).render(
-  <ActiveSectionProvider>
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
     <App />
-  </ActiveSectionProvider>
+  </React.StrictMode>
 );

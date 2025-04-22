@@ -1,47 +1,51 @@
 import { WritingSample, InspirationCategory, DraftFile } from "@/types";
 
 export const academicSamples: WritingSample[] = [
-  {
-    id: "rhetorical-analysis",
-    title: "Rhetorical Analysis Essay",
-    date: "November 15, 2024",
-    status: "Final Draft (A)",
-    prefatory: {
-      explanation: "This assignment required an analysis of rhetorical strategies in a published speech or essay.",
-      approach: "I chose Martin Luther King Jr.'s 'Letter from Birmingham Jail' and focused on how he uses ethos, pathos, and logos to build his argument against gradualism.",
-      strengthsWeaknesses: "Strengths include my analysis of King's use of biblical references. I could have developed more on the historical context that surrounded the letter.",
-    },
-    preview: {
-      title: "Letter from Birmingham Jail: A Masterclass in Rhetoric",
-      content: [
-        "In his seminal 'Letter from Birmingham Jail,' Martin Luther King Jr. demonstrates masterful command of rhetorical strategies to defend civil disobedience and critique white moderate inaction. Written in April 1963 while imprisoned for participating in non-violent demonstrations, King's letter responds to eight white clergymen who condemned the protests as 'unwise and untimely.'",
-        "King establishes his ethos immediately by adopting a measured, scholarly tone that demonstrates his education while also appealing to his religious authority as a fellow clergyman. He writes, 'I am in Birmingham because injustice is here,' presenting himself as a necessary responder to crisis rather than an outside agitator.",
-        "The most striking aspect of King's rhetoric is his use of pathos through precise, evocative language that forces readers to confront the human cost of segregation. His description of having to explain to his six-year-old daughter 'why she can't go to the public amusement park' and seeing 'ominous clouds of inferiority beginning to form in her little mental sky' transforms abstract policy discussions into painful human reality."
+    {
+      id: "descriptive-narrative",
+      title: "Descriptive Narrative – Interview Reflection",
+      date: "March 2025",
+      status: "Final Draft (93/100)",
+      prefatory: {
+        explanation: "This assignment asked us to write about a memorable 'first' or emotionally significant moment. I chose to reflect on an important interview where I let go of rehearsed answers and embraced honesty.",
+        approach: "I drew from my real-life experience interviewing for a technical role and reflected on my growth through journaling. I approached it like a cinematic scene—layering internal thoughts with rising emotional tension.",
+        strengthsWeaknesses: "I received strong marks for emotional insight and clarity of writing. Feedback encouraged me to cut some ‘fluff’ and improve my dialogue formatting. I plan to enhance pacing and structure in future narratives."
+      },
+      preview: {
+        title: "The Power of Truth: Embracing Authenticity Under Pressure",
+        content: [
+          "10:50 AM. This was it—the interview I had been preparing for tirelessly over the past two weeks. I sat there, sweating from excitement and the magnitude of what was about to happen.",
+          "The moment I clicked into the meeting, everything felt quiet and still. I had practiced every response, but when the interviewer asked, 'Is that your real reason?' I froze. And for once, I let go of the rehearsed answer and just spoke from the heart.",
+          "By the end of the interview, I didn’t just feel relieved—I felt accomplished. What blossomed was a journey of growth and self-discovery. I had learned that success isn’t measured by perfect preparation, but by the strength it takes to be genuinely honest."
+        ]
+      },
+      versions: ["First Draft", "Final Draft", "What I Would Change"],
+      activeVersion: "Final Draft",
+      drafts: [
+        {
+          type: 'image',
+          title: 'First Draft - Handwritten + Feedback',
+          description: 'First draft including feedback on dialogue formatting, structure, and pacing.',
+          filePath: '/drafts/sadi-draft-1.jpeg' // replace with real image route
+        },
+        {
+          type: 'image',
+          title: 'Final Draft',
+          description: 'Final polished draft submitted for grading. Final grade: 93/100.',
+          filePath: '/drafts/sadi-draft-final.jpeg'
+        },
+        {
+          type: 'text',
+          title: 'What I Would Do In a Third Draft',
+          description: 'Reflection on next steps if I had one more round of revision.',
+          content: [
+            "I would restructure the opening to add more emotional stakes and maybe reduce the spacing/pacing issues noted by my teacher.",
+            "I'd format the dialogue with clearer paragraph breaks and make the 'click into the meeting' moment a bit more vivid.",
+            "I'd also layer in more internal tension during the midsection so the reader feels the weight of the decision as I made it."
+          ]
+        }
       ]
     },
-    versions: ["First Draft", "Second Draft", "Final Draft"],
-    activeVersion: "Final Draft",
-    drafts: [
-      {
-        type: 'pdf',
-        title: 'First Draft - Rhetorical Analysis',
-        description: 'Initial analysis with instructor comments',
-        filePath: '/drafts/rhetorical-first-draft.pdf'
-      },
-      {
-        type: 'pdf',
-        title: 'Second Draft - Rhetorical Analysis',
-        description: 'Revised version after peer feedback',
-        filePath: '/drafts/rhetorical-second-draft.pdf'
-      },
-      {
-        type: 'image',
-        title: 'Planning Document',
-        description: 'Initial brainstorming and outline',
-        filePath: '/drafts/rhetorical-planning.jpg'
-      }
-    ]
-  },
   {
     id: "argumentative-essay",
     title: "Argumentative Essay on Digital Privacy",

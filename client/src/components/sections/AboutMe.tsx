@@ -1,200 +1,106 @@
-import { Card, CardContent } from "@/components/ui/card";
-import profilePlaceholder from "@/assets/images/profile-placeholder.svg";
-import photoPlaceholder1 from "@/assets/images/photo-placeholder-1.svg";
-import photoPlaceholder2 from "@/assets/images/photo-placeholder-2.svg";
-import photoPlaceholder3 from "@/assets/images/photo-placeholder-3.svg";
-import galleryPlaceholder from "@/assets/images/gallery-placeholder.svg";
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import profilePic from "@/assets/images/profile-placeholder.svg";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
 
 export default function AboutMe() {
   return (
-    <div className="space-y-12">
-      {/* Hero section with image */}
-      <div className="hero-section mb-12 rounded-xl overflow-hidden reveal-element">
-        <div className="max-w-6xl mx-auto px-4 py-12 md:py-16 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="text-left md:w-1/2 z-10">
-            <h1 className="hero-text mb-4">About Me</h1>
-            <p className="hero-subtext">
-              My journey as a writer and student exploring language, ideas, and expression
-            </p>
-          </div>
-          
-          <div className="md:w-1/2 z-10 flex justify-center md:justify-end">
-            <div className="image-frame w-60 h-60 md:w-72 md:h-72 relative border-2 border-blue-800 rounded-lg overflow-hidden">
-              <img 
-                src={profilePlaceholder} 
-                alt="Student profile" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-transparent mix-blend-overlay"></div>
-            </div>
-          </div>
+    <div className="max-w-screen-lg mx-auto px-6 py-20 text-blue-100 font-sans space-y-28">
+      {/* Title + Quote */}
+      <div className="text-center space-y-10">
+        <h1 className="text-5xl font-extrabold text-blue-400 drop-shadow-md">About Me</h1>
+        <blockquote className="italic text-lg md:text-xl max-w-3xl mx-auto border-l-4 pl-4 border-blue-700 text-blue-300">
+          "The adventure of life is to learn... The beauty of life is to give."
+          <span className="block mt-3 text-sm font-medium text-blue-400">— William Arthur Ward</span>
+        </blockquote>
+        <div className="flex justify-center mt-6">
+          <Image src={profilePic} alt="Sadi Bulut" width={160} height={160} className="rounded-full border-4 border-blue-700 shadow-xl" />
         </div>
       </div>
-      
-      {/* Photo Gallery Section */}
-      <div className="mb-12 reveal-element">
-        <h2 className="text-3xl font-bold mb-8 text-blue-200 text-center relative inline-block">
-          My Journey in Pictures
-          <span className="absolute -bottom-2 left-0 w-full h-1 bg-blue-700 rounded-full"></span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="aspect-[4/3] overflow-hidden border-2 border-blue-800 rounded-lg">
-            <img src={photoPlaceholder1} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-          </div>
-          <div className="aspect-[4/3] overflow-hidden border-2 border-blue-800 rounded-lg">
-            <img src={photoPlaceholder3} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-          </div>
-          <div className="aspect-[4/3] overflow-hidden border-2 border-blue-800 rounded-lg">
-            <img src={photoPlaceholder1} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-          </div>
+
+      {/* Who Am I */}
+      <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} custom={0} className="space-y-6">
+        <h2 className="text-3xl font-bold text-blue-300">🌊 Who Am I?</h2>
+        <p>
+          Hey! My name is Sadi Bulut, and I’m currently a junior at Cannon School. I’ve been programming for nearly eight years—it started as a hobby, but quickly became a huge part of who I am.
+        </p>
+
+        {/* Image between paragraphs */}
+        <div className="relative h-[300px] w-full rounded-2xl overflow-hidden shadow-xl border border-blue-900">
+          <Image src="/images/programming.jpg" alt="Programming Passion" fill className="object-cover hover:scale-105 transition-transform duration-500" />
         </div>
-      </div>
-      
-      {/* Main content and info section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="md:col-span-2">
-          <Card className="content-card h-full bg-black border-2 border-blue-800">
-            <CardContent className="p-8 space-y-6">
-              <div className="reveal-element">
-                <h2 className="text-2xl font-bold mb-6 text-blue-300">Hello, I'm [Student Name]</h2>
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-6">
-                  <div className="md:col-span-3">
-                    <p className="text-blue-100 text-lg mb-4">
-                      I'm a senior at Westlake High School with a passion for writing that spans academic analysis, 
-                      creative expression, and everything in between. This portfolio showcases selected pieces from my 
-                      AP Language and Composition class, along with writing from beyond the classroom.
-                    </p>
-                    
-                    <p className="text-blue-100 text-lg mb-4">
-                      My writing journey began in early childhood, when I filled countless notebooks with stories. 
-                      As I've grown as a student and writer, I've developed a special interest in using rhetoric to 
-                      explore complex social issues and personal experiences.
-                    </p>
-                  </div>
-                  
-                  <div className="md:col-span-2">
-                    <div className="h-full overflow-hidden border-2 border-blue-800 rounded-lg">
-                      <img 
-                        src={photoPlaceholder2} 
-                        alt="Add photo here" 
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="reveal-element pt-4">
-                <h3 className="text-2xl font-semibold mb-3 text-blue-300 relative inline-block">
-                  My Writing Philosophy
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-700"></span>
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-                  <div className="md:col-span-2 order-2 md:order-1">
-                    <div className="h-full overflow-hidden border-2 border-blue-800 rounded-lg">
-                      <img 
-                        src={photoPlaceholder3} 
-                        alt="Add photo here" 
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="md:col-span-3 order-1 md:order-2">
-                    <p className="text-blue-100 text-lg mb-4">
-                      I believe that effective writing serves as a bridge between minds—allowing us to share experiences 
-                      and perspectives across time and space. Whether analyzing literature, constructing arguments, or 
-                      reflecting on personal experiences, I approach writing as an opportunity to discover what I think 
-                      by seeing what I say.
-                    </p>
-                    
-                    <p className="text-blue-100 text-lg">
-                      Through this AP Language and Composition course, I've developed a deeper understanding of how 
-                      rhetorical choices shape communication. I've learned to pay closer attention to audience, purpose, 
-                      and context—skills that have transformed not just my academic writing but my ability to communicate 
-                      effectively in all areas of life.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+
+        <p>
+          Today, I’m the President of both the Programming and Robotics Clubs, and a Model UN member, always looking for new ways to blend creativity, technology, and impact.
+        </p>
+        <p>
+          Beyond the screen, I’m a scuba diver with a love for the ocean’s quiet mysteries. I’ve captured that world through underwater photography, a passion sparked by both exploration and storytelling.
+        </p>
+
+        {/* Image between paragraphs */}
+        <div className="relative h-[300px] w-full rounded-2xl overflow-hidden shadow-xl border border-blue-900">
+          <Image src="/images/underwater.jpg" alt="Underwater Photography" fill className="object-cover hover:scale-105 transition-transform duration-500" />
         </div>
-        
-        <div className="md:col-span-1">
-          <Card className="content-card h-full bg-black border-2 border-blue-800">
-            <CardContent className="p-8 space-y-6">
-              <div className="reveal-element">
-                <h3 className="text-2xl font-semibold mb-4 text-blue-300 relative inline-block">
-                  Key Growth Areas
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-700"></span>
-                </h3>
-                
-                <div className="space-y-4 pt-2">
-                  <div className="p-4 bg-black rounded-lg shadow-sm border-2 border-blue-900">
-                    <h4 className="font-medium mb-1 text-blue-400">Writing Process</h4>
-                    <p className="text-blue-100">Developing a more intentional approach that embraces revision</p>
-                  </div>
-                  
-                  <div className="p-4 bg-black rounded-lg shadow-sm border-2 border-blue-900">
-                    <h4 className="font-medium mb-1 text-blue-400">Argumentation</h4>
-                    <p className="text-blue-100">Constructing compelling arguments with relevant evidence</p>
-                  </div>
-                  
-                  <div className="p-4 bg-black rounded-lg shadow-sm border-2 border-blue-900">
-                    <h4 className="font-medium mb-1 text-blue-400">Adaptability</h4>
-                    <p className="text-blue-100">Adjusting tone and style for different audiences and purposes</p>
-                  </div>
-                  
-                  <div className="p-4 bg-black rounded-lg shadow-sm border-2 border-blue-900">
-                    <h4 className="font-medium mb-1 text-blue-400">Analysis</h4>
-                    <p className="text-blue-100">Examining rhetorical strategies in texts from various periods</p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+
+        <p>
+          I’ve also spent years building games, chasing ideas that let players not just play, but feel.
+        </p>
+      </motion.section>
+
+      {/* Reader Section */}
+      <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} custom={1} className="space-y-6">
+        <h2 className="text-3xl font-bold text-blue-300">📚 As a Reader...</h2>
+        <p>
+          I didn’t grow up with English as my first language—I actually started teaching myself at age 6 through YouTube videos. That curiosity never faded. By age 9, I was reading classics.
+        </p>
+        <div className="relative h-[300px] w-full rounded-2xl overflow-hidden shadow-xl border border-blue-900">
+          <Image src="/images/books.jpg" alt="Reading Journey" fill className="object-cover hover:scale-105 transition-transform duration-500" />
         </div>
-      </div>
-      
-      {/* Full width gallery */}
-      <div className="reveal-element my-16">
-        <Card className="overflow-hidden bg-black border-2 border-blue-800 shadow-lg">
-          <div className="p-6 bg-blue-900/20 border-b-2 border-blue-800">
-            <h3 className="text-2xl font-semibold text-blue-300 text-center">My Photo Gallery</h3>
-          </div>
-          <CardContent className="p-8">
-            <div className="w-full overflow-hidden rounded-lg border-2 border-blue-900">
-              <img 
-                src={galleryPlaceholder} 
-                alt="Photo gallery" 
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
-              <div className="aspect-square overflow-hidden border-2 border-blue-900 rounded-lg">
-                <img src={photoPlaceholder1} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-              </div>
-              <div className="aspect-square overflow-hidden border-2 border-blue-900 rounded-lg">
-                <img src={photoPlaceholder3} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-              </div>
-              <div className="aspect-square overflow-hidden border-2 border-blue-900 rounded-lg">
-                <img src={photoPlaceholder1} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-              </div>
-              <div className="aspect-square overflow-hidden border-2 border-blue-900 rounded-lg">
-                <img src={photoPlaceholder3} alt="Add photo here" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-      
-      <div className="text-center mt-12 reveal-element">
-        <div className="inline-block p-3 bg-black rounded-full shadow-md text-sm border-2 border-blue-900 text-blue-200">
-          This portfolio showcases selected work from August 2024 to April 2025
+        <p>
+          That same year, I traveled alone to New York for a summer school program, and it changed everything. Seeing the U.S. as a kid from another country was surreal—but it also felt like a calling.
+        </p>
+      </motion.section>
+
+      {/* Writer Section */}
+      <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} custom={2} className="space-y-6">
+        <h2 className="text-3xl font-bold text-blue-300">✍️ As a Writer...</h2>
+        <p>
+          My journey with writing mirrors my journey with language itself—gradual, personal, and shaped by constant learning. I’ve always been an intrigued observer of words.
+        </p>
+        <div className="relative h-[300px] w-full rounded-2xl overflow-hidden shadow-xl border border-blue-900">
+          <Image src="/images/writing.jpg" alt="Writing Growth" fill className="object-cover hover:scale-105 transition-transform duration-500" />
         </div>
-      </div>
+        <p>
+          Through years of reading, traveling, and studying different subjects, I’ve developed a voice that is reflective, curious, and layered.
+        </p>
+      </motion.section>
+
+      {/* Identity Section */}
+      <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} custom={3} className="space-y-6">
+        <h2 className="text-3xl font-bold text-blue-300">🧭 What Makes Me, Me?</h2>
+        <p>
+          I owe a lot to the people and places that have shaped me. My mentor Tahsin Ceylan, an expert in marine life and underwater cinematography, taught me to look deeper.
+        </p>
+        <div className="relative h-[300px] w-full rounded-2xl overflow-hidden shadow-xl border border-blue-900">
+          <Image src="/images/travel.jpg" alt="World Travel" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+        <p>
+          My internships, projects, and even the mistakes I’ve made along the way have helped me become not just a better student—but a more self-aware human.
+        </p>
+      </motion.section>
     </div>
   );
 }
